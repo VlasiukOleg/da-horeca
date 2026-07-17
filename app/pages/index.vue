@@ -1,11 +1,11 @@
 <template>
   <main>
-    <LandingHeroSection />
-    <LandingWhyUsSection />
-    <LandingEcosystemSection />
-    <LandingClientBonusesSection />
-    <LandingPricingSection />
-    <LandingReviewsSection />
+    <LandingHeroSection id="hero" />
+    <LandingWhyUsSection id="why-us" />
+    <LandingEcosystemSection id="ecosystem" />
+    <LandingClientBonusesSection id="bonuses" />
+    <LandingPricingSection id="pricing" />
+    <LandingReviewsSection id="reviews" />
   </main>
 </template>
 
