@@ -1,6 +1,20 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+@theme {
+  --color-brand-50: #f4f5f8;
+  --color-brand-100: #e8eaf1;
+  --color-brand-200: #c6cbde;
+  --color-brand-300: #a3accc;
+  --color-brand-400: #808db9;
+  --color-brand-500: #414a6e;
+  --color-brand-600: #3a4263;
+  --color-brand-700: #323955;
+  --color-brand-800: #292f46;
+  --color-brand-900: #222639;
+  --color-brand-950: #161925;
+}
+
 
 body {
   font-family: 'Nunito', sans-serif;
