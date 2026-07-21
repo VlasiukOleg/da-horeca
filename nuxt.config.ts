@@ -4,6 +4,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui', '@nuxtjs/google-fonts'],
   css: ['~/assets/css/main.css'],
+  app: {
+    head: {
+      title: 'HoReCa Da — Сучасна ресторанна бухгалтерія',
+      meta: [
+        { name: 'description', content: 'Будуємо управлінський облік, який підлаштовується під ваш бізнес, щоб ви могли сфокусуватися на гостях, смаку та розвитку закладу.' }
+      ]
+    }
+  },
   googleFonts: {
     families: {
       Nunito: [400, 700, 900], // 900 — для тих самих жирних заголовків
