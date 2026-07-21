@@ -12,9 +12,9 @@
 
 <script setup>
 useSeoMeta({
-  ogTitle: 'Horeca Da - Сучасна ресторанна бухгалтерія',
+  ogTitle: 'Horeca Da - сучасна ресторанна бухгалтерія',
   ogDescription: 'Професійний фінансовий супровід, аудит та автоматизація для закладів Horeca.',
-  ogImage: '/og-image.jpg',
+  ogImage: '/og-image.png',
   twitterCard: 'summary_large_image',
 })
 </script>
