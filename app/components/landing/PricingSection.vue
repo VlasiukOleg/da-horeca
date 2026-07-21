@@ -1,98 +1,69 @@
 <template>
-  <section class="py-16 md:py-24 bg-gray-50/50 dark:bg-gray-900/10">
+  <section class="py-16 md:py-24 bg-gray-50/50 dark:bg-gray-900/10" id="pricing">
     <UContainer>
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Послуги та вартість</h2>
         <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Прозоре ціноутворення без прихованих платежів. Обирайте формат співпраці, який підходить саме вашому закладу.
-
         </p>
       </div>
 
-      <!-- ВАРІАНТ 1: Вкладки (Tabs) - Найбільш компактний -->
-      <div class="mb-24">
-        <h3 class="text-2xl font-bold text-brand-800 dark:text-brand-300 mb-6 border-b pb-2">Варіант 1: Вкладки (Найкомпактніший)</h3>
-        
-        <UTabs :items="tabItems" class="w-full">
-          <template #content="{ item }">
-            <UCard class="mt-4 ring-1 ring-gray-200 dark:ring-gray-800 shadow-sm">
-              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div v-for="(subItem, idx) in item.services" :key="idx" class="p-5 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/50 hover:border-brand-300 dark:hover:border-brand-700 transition-colors">
-                  <div class="flex justify-between items-start gap-4 mb-3">
-                    <h4 class="font-bold text-lg text-gray-900 dark:text-white">{{ subItem.name }}</h4>
-                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-100 text-brand-800 dark:bg-brand-900/50 dark:text-brand-300 whitespace-nowrap">
-                      {{ subItem.price }}
-                    </span>
-                  </div>
-                  <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{{ subItem.description }}</p>
-                </div>
-              </div>
-            </UCard>
+      <div class="max-w-4xl mx-auto">
+        <UAccordion 
+          :items="accordionItems" 
+          default-value="complex"
+          class="space-y-4"
+          :ui="{
+            wrapper: 'w-full flex flex-col',
+            default: {
+              class: 'px-6 py-6 rounded-2xl border border-gray-200/60 dark:border-gray-800/60 shadow-sm bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/80 transition-all w-full text-left flex items-center gap-4'
+            },
+            item: {
+              padding: 'px-2 pt-2 pb-6'
+            }
+          }"
+        >
+          <!-- Custom Icon (Leading) -->
+          <template #leading="{ item, open }">
+            <div 
+              class="flex items-center justify-center w-12 h-12 rounded-xl transition-colors shrink-0"
+              :class="open ? 'bg-brand-100 text-brand-700 dark:bg-brand-900/50 dark:text-brand-300' : 'bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400 group-hover:bg-brand-50 group-hover:text-brand-500'"
+            >
+              <UIcon :name="item.icon" class="w-7 h-7" />
+            </div>
           </template>
-        </UTabs>
-      </div>
 
-
-      <!-- ВАРІАНТ 2: Акордеон (Accordion) - Зручний для читання з мобільного -->
-      <div class="mb-24">
-        <h3 class="text-2xl font-bold text-brand-800 dark:text-brand-300 mb-6 border-b pb-2">Варіант 2: Акордеон (Добре для мобільних)</h3>
-        
-        <UAccordion :items="accordionItems" :multiple="true" class="bg-white dark:bg-gray-900 rounded-xl shadow-sm ring-1 ring-gray-200 dark:ring-gray-800">
+          <!-- Custom Label (Default) -->
+          <template #default="{ item, open }">
+            <span 
+              class="text-xl md:text-2xl font-semibold transition-colors"
+              :class="open ? 'text-brand-800 dark:text-brand-300' : 'text-gray-900 dark:text-white'"
+            >
+              {{ item.label }}
+            </span>
+          </template>
+          <!-- Content of the accordion (Sub-services list) -->
           <template #content="{ item }">
-            <div class="p-4 bg-gray-50/50 dark:bg-gray-800/20">
-              <div class="space-y-4">
-                <div v-for="(subItem, idx) in item.services" :key="idx" class="bg-white dark:bg-gray-800 p-5 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm flex flex-col md:flex-row gap-4">
-                  <div class="md:w-2/3">
-                    <h4 class="font-bold text-lg text-gray-900 dark:text-white mb-2">{{ subItem.name }}</h4>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">{{ subItem.description }}</p>
-                  </div>
-                  <div class="md:w-1/3 flex md:justify-end items-start mt-2 md:mt-0">
-                    <span class="inline-block px-3 py-1 rounded-lg bg-brand-50 text-brand-700 font-semibold border border-brand-100 dark:bg-brand-900/30 dark:text-brand-300 dark:border-brand-800/50 text-center w-full md:w-auto">
-                      {{ subItem.price }}
-                    </span>
-                  </div>
+            <div class="space-y-4 pt-2">
+              <div 
+                v-for="(subItem, idx) in item.services" 
+                :key="idx" 
+                class="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col lg:flex-row gap-6 hover:shadow-md transition-shadow"
+              >
+                <div class="lg:w-3/4">
+                  <h4 class="font-bold text-xl text-gray-900 dark:text-white mb-3">{{ subItem.name }}</h4>
+                  <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">{{ subItem.description }}</p>
+                </div>
+                <div class="lg:w-1/4 flex lg:justify-end items-start mt-2 lg:mt-0">
+                  <span class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-brand-50 text-brand-700 font-bold border border-brand-100 dark:bg-brand-900/30 dark:text-brand-300 dark:border-brand-800/50 text-center w-full sm:w-auto min-w-[140px] whitespace-nowrap">
+                    {{ subItem.price }}
+                  </span>
                 </div>
               </div>
             </div>
           </template>
         </UAccordion>
       </div>
-
-
-      <!-- ВАРІАНТ 3: Картки (Grid) - Найбільш наочний -->
-      <div class="mb-10">
-        <h3 class="text-2xl font-bold text-brand-800 dark:text-brand-300 mb-6 border-b pb-2">Варіант 3: Великі Картки (Наочний)</h3>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <UCard v-for="category in categories" :key="category.id" class="flex flex-col h-full hover:border-brand-200 dark:hover:border-brand-800 transition-colors overflow-hidden">
-            <template #header>
-              <div class="flex items-center gap-3">
-                <div class="h-12 w-12 rounded-lg bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center text-brand-600 dark:text-brand-400">
-                  <UIcon :name="category.icon" class="w-6 h-6" />
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white">{{ category.title }}</h3>
-              </div>
-            </template>
-            
-            <div class="space-y-6 flex-grow">
-              <div v-for="(subItem, idx) in category.items" :key="idx" class="border-b border-gray-100 dark:border-gray-800 pb-4 last:border-0 last:pb-0">
-                <div class="flex justify-between items-start gap-2 mb-2 flex-col sm:flex-row sm:items-center">
-                  <h4 class="font-semibold text-gray-800 dark:text-gray-200">{{ subItem.name }}</h4>
-                  <span class="text-brand-600 dark:text-brand-400 font-bold whitespace-nowrap">{{ subItem.price }}</span>
-                </div>
-                <p class="text-sm text-gray-500 dark:text-gray-400">{{ subItem.description }}</p>
-              </div>
-            </div>
-            
-            <template #footer>
-              <UButton block color="gray" variant="ghost" class="hover:bg-brand-50 dark:hover:bg-brand-900/20 text-brand-600 dark:text-brand-400">
-                Обговорити {{ category.title.toLowerCase() }}
-              </UButton>
-            </template>
-          </UCard>
-        </div>
-      </div>
-
     </UContainer>
   </section>
 </template>
@@ -191,21 +162,12 @@ const categories = [
   }
 ]
 
-// For UTabs
-const tabItems = computed(() => {
-  return categories.map(cat => ({
-    label: cat.title,
-    icon: cat.icon,
-    services: cat.items
-  }))
-})
-
 // For UAccordion
 const accordionItems = computed(() => {
   return categories.map(cat => ({
     label: cat.title,
     icon: cat.icon,
-    defaultOpen: cat.id === 'complex',
+    value: cat.id,
     services: cat.items
   }))
 })
