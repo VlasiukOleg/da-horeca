@@ -88,6 +88,8 @@
                 type="submit"
                 size="lg"
                 color="primary"
+                :loading="isSubmitting"
+                :disabled="isSubmitting"
                 class="px-8 py-4 md:px-10 md:py-3 rounded-xl text-lg md:text-base font-bold bg-brand-600 hover:bg-brand-700 text-white shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full md:w-auto md:min-w-[240px] justify-center"
               >
                 Залишити заявку
@@ -108,7 +110,7 @@
 
 <script setup lang="ts">
 import { vMaska } from 'maska/vue'
-import { reactive, computed, watch } from 'vue'
+import { reactive, computed, watch, ref } from 'vue'
 import { object, string } from 'yup'
 import type { InferType } from 'yup'
 import type { FormSubmitEvent } from '@nuxt/ui'
@@ -139,6 +141,7 @@ const state = reactive({
 
 const toast = useToast()
 const selectedService = useSelectedService()
+const isSubmitting = ref(false)
 
 watch(selectedService, (newVal) => {
   if (newVal) {
@@ -149,20 +152,37 @@ watch(selectedService, (newVal) => {
 // Події маски обробляються автоматично через директиву v-maska
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  console.log("Дані форми:", event.data)
+  isSubmitting.value = true
   
-  toast.add({
-    title: "Заявка успішно відправлена!",
-    description: "Наш менеджер зв'яжеться з вами найближчим часом.",
-    color: "primary",
-    icon: "i-heroicons-check-circle"
-  })
-  
-  // Очищення форми
-  state.name = undefined
-  state.phone = ''
-  state.service = undefined
-  state.company = undefined
-  selectedService.value = undefined
+  try {
+    await $fetch('/api/contact', {
+      method: 'POST',
+      body: event.data
+    })
+    
+    toast.add({
+      title: "Заявка успішно відправлена!",
+      description: "Наш менеджер зв'яжеться з вами найближчим часом.",
+      color: "primary",
+      icon: "i-heroicons-check-circle"
+    })
+    
+    // Очищення форми
+    state.name = undefined
+    state.phone = ''
+    state.service = undefined
+    state.company = undefined
+    selectedService.value = undefined
+  } catch (error) {
+    toast.add({
+      title: "Помилка відправки",
+      description: "Сталася помилка при відправці заявки. Будь ласка, спробуйте ще раз або зателефонуйте нам.",
+      color: "error",
+      icon: "i-heroicons-exclamation-circle"
+    })
+    console.error("Error submitting form:", error)
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>

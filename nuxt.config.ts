@@ -4,6 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui', '@nuxtjs/google-fonts'],
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    telegramBotToken: "",
+    telegramChatId: "",
+  },
   app: {
     head: {
       title: 'HoReCa Da — Сучасна ресторанна бухгалтерія',
