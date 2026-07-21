@@ -22,10 +22,14 @@ const items = computed<NavigationMenuItem[]>(() => [
     label: "Відгуки",
     to: "#reviews",
   },
+  {
+    label: "Контакти",
+    to: "#contact",
+  },
 ]);
 
 const handleScrollToContact = () => {
-  const element = document.getElementById("pricing");
+  const element = document.getElementById("contact");
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
   }
