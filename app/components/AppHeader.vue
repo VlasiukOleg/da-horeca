@@ -49,6 +49,7 @@ const handleScrollToContact = () => {
     </div>
 
     <template #right>
+      <UColorModeButton />
       <UButton
         label="Записатись на консультацію"
         variant="solid"

@@ -24,7 +24,9 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-h1, h2, h3, .font-black {
-  font-weight: 900;
-  letter-spacing: -0.02em;
+@layer base {
+  h1, h2, h3, .font-black {
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
 }

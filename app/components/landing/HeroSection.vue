@@ -8,9 +8,9 @@
         </div>
         
         <!-- Варіант 1: Темна плашка (Badge) з нахилом -->
-        <h1 class="text-4xl md:text-5xl lg:text-6xl text-gray-800 dark:text-white tracking-tight mb-16 leading-[1.1]">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl text-gray-600 dark:text-gray-300 font-bold tracking-tight mb-16 leading-[1.1]">
           це сучасна ресторанна бухгалтерія <br class="hidden md:block" /> 
-          <span class="inline-block bg-brand-800 text-white px-3 py-0.5 rounded-xl transform -rotate-2 mt-6 shadow-md font-semibold text-3xl md:text-4xl lg:text-5xl">"без краваток"</span>
+          <span class="inline-block bg-brand-800 text-white px-3 py-0.5 rounded-xl transform -rotate-2 mt-6 shadow-md font-bold text-3xl md:text-4xl lg:text-5xl">"без краваток"</span>
         </h1>
 
         <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
