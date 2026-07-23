@@ -1,13 +1,26 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import type { NavigationMenuItem } from "@nuxt/ui";
 
-const items: NavigationMenuItem[] = [
-  {
-    label: "Політика конфіденційності",
-    to: "/",
-    target: "_blank",
-  },
-];
+const route = useRoute();
+
+const items = computed<NavigationMenuItem[]>(() => {
+  if (route.path === '/policy') {
+    return [
+      {
+        label: "Головна",
+        to: "/",
+      },
+    ];
+  }
+  
+  return [
+    {
+      label: "Політика конфіденційності",
+      to: "/policy",
+    },
+  ];
+});
 </script>
 
 <template>

@@ -2,9 +2,11 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 const router = useRouter();
-
 const isVisible = ref(false);
-let observer: IntersectionObserver | null = null;
+
+const checkScroll = () => {
+  isVisible.value = window.scrollY > 300;
+};
 
 const scrollToTop = () => {
   if (router.currentRoute.value.hash) {
@@ -17,31 +19,20 @@ const scrollToTop = () => {
 };
 
 onMounted(() => {
-  const hero = document.getElementById("hero");
-  if (hero) {
-    observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry) {
-          // Show button when hero is NOT in view
-          isVisible.value = !entry.isIntersecting;
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(hero);
-  }
+  window.addEventListener("scroll", checkScroll);
+  // Check initial scroll position
+  checkScroll();
 });
 
 onUnmounted(() => {
-  observer?.disconnect();
+  window.removeEventListener("scroll", checkScroll);
 });
 </script>
 
 <template>
   <Transition name="scroll-btn">
     <button
-      v-if="isVisible"
+      v-if="isVisible && $route.path === '/'"
       id="scroll-to-top"
       aria-label="Піднятися вгору"
       class="scroll-to-top-btn"

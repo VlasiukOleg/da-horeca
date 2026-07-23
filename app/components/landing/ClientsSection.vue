@@ -9,6 +9,8 @@ const clientLogos = [
   '/boca-logo.png',
   '/fsc-logo.png',
   '/obiwan-logo.png',
+  '/fem-logo.png',
+  '/lafarine-logo.png',
 ]
 </script>
 
@@ -27,6 +29,15 @@ const clientLogos = [
 
       <UMarquee pause-on-hover class="py-4">
         <div v-for="(logo, index) in clientLogos" :key="index" class="mx-4 md:mx-6 lg:mx-8 flex items-center justify-center shrink-0 w-28 md:w-36 lg:w-40 h-16 md:h-20">
+          <img 
+            :src="logo" 
+            :alt="`Клієнт ${index + 1}`" 
+            class="w-full h-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+          />
+        </div>
+      </UMarquee>
+      <UMarquee pause-on-hover class="py-4">
+        <div v-for="(logo, index) in clientLogos" :key="index" class="shrink-0 w-28 md:w-36 lg:w-40 h-16 md:h-20">
           <img 
             :src="logo" 
             :alt="`Клієнт ${index + 1}`" 
