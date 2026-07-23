@@ -9,27 +9,6 @@ const clientLogos = [
   '/boca-logo.png',
   '/fsc-logo.png',
   '/obiwan-logo.png',
-  '/sereda-logo.png',
-  '/avangarden-logo.png',
-  '/zironka-logo.png',
-  '/kicunya-logo.png',
-  '/boca-logo.png',
-  '/fsc-logo.png',
-  '/obiwan-logo.png',
-  '/sereda-logo.png',
-  '/avangarden-logo.png',
-  '/zironka-logo.png',
-  '/kicunya-logo.png',
-  '/boca-logo.png',
-  '/fsc-logo.png',
-  '/obiwan-logo.png',
-  '/sereda-logo.png',
-  '/avangarden-logo.png',
-  '/zironka-logo.png',
-  '/kicunya-logo.png',
-  '/boca-logo.png',
-  '/fsc-logo.png',
-  '/obiwan-logo.png',
 ]
 </script>
 
@@ -47,11 +26,11 @@ const clientLogos = [
       </div>
 
       <UMarquee pause-on-hover class="py-4">
-        <div v-for="(logo, index) in clientLogos" :key="index" class="mx-4 md:mx-6 lg:mx-8 flex items-center justify-center shrink-0">
+        <div v-for="(logo, index) in clientLogos" :key="index" class="mx-4 md:mx-6 lg:mx-8 flex items-center justify-center shrink-0 w-28 md:w-36 lg:w-40 h-16 md:h-20">
           <img 
             :src="logo" 
             :alt="`Клієнт ${index + 1}`" 
-            class="h-16 md:h-20 w-auto max-w-none object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+            class="w-full h-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
           />
         </div>
       </UMarquee>
