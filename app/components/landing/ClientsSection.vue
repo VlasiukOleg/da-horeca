@@ -9,6 +9,27 @@ const clientLogos = [
   '/boca-logo.png',
   '/fsc-logo.png',
   '/obiwan-logo.png',
+  '/sereda-logo.png',
+  '/avangarden-logo.png',
+  '/zironka-logo.png',
+  '/kicunya-logo.png',
+  '/boca-logo.png',
+  '/fsc-logo.png',
+  '/obiwan-logo.png',
+  '/sereda-logo.png',
+  '/avangarden-logo.png',
+  '/zironka-logo.png',
+  '/kicunya-logo.png',
+  '/boca-logo.png',
+  '/fsc-logo.png',
+  '/obiwan-logo.png',
+  '/sereda-logo.png',
+  '/avangarden-logo.png',
+  '/zironka-logo.png',
+  '/kicunya-logo.png',
+  '/boca-logo.png',
+  '/fsc-logo.png',
+  '/obiwan-logo.png',
 ]
 </script>
 
@@ -25,7 +46,7 @@ const clientLogos = [
         </div>
       </div>
 
-      <UMarquee pause-on-hover :repeat="6" class="py-4">
+      <UMarquee pause-on-hover class="py-4">
         <div v-for="(logo, index) in clientLogos" :key="index" class="mx-4 md:mx-6 lg:mx-8 flex items-center justify-center shrink-0">
           <img 
             :src="logo" 
