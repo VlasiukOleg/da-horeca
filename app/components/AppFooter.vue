@@ -24,6 +24,12 @@ const items: NavigationMenuItem[] = [
     <div class="footer-nav">
       <UNavigationMenu :items="items" variant="link" />
     </div>
+
+    <template #right>
+      <a href="tel:+380997120883" class="text-white hover:opacity-80 transition-opacity text-sm font-medium">
+        +380 99 712 08 83
+      </a>
+    </template>
   </UFooter>
 </template>
 

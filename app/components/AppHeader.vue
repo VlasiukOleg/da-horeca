@@ -53,6 +53,13 @@ const handleScrollToContact = () => {
     </div>
 
     <template #right>
+      <UButton
+        to="tel:+380997120883"
+        icon="i-heroicons-phone"
+        variant="solid"
+        class="bg-white text-brand-700 hover:bg-gray-100 shadow-sm"
+        aria-label="Зателефонувати"
+      />
       <UColorModeButton />
       <UButton
         label="Записатись на консультацію"
