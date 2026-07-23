@@ -26,16 +26,6 @@ const clientLogos = [
           <span class="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 py-2 rounded-full shadow-sm"><UIcon name="i-heroicons-check-circle" class="w-5 h-5 text-brand-500" />Мультиформатні заклади</span>
         </div>
       </div>
-
-      <UMarquee pause-on-hover class="py-4">
-        <div v-for="(logo, index) in clientLogos" :key="index" class="mx-4 md:mx-6 lg:mx-8 flex items-center justify-center shrink-0 w-28 md:w-36 lg:w-40 h-16 md:h-20">
-          <img 
-            :src="logo" 
-            :alt="`Клієнт ${index + 1}`" 
-            class="w-full h-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
-          />
-        </div>
-      </UMarquee>
       <UMarquee pause-on-hover class="py-4">
         <div v-for="(logo, index) in clientLogos" :key="index" class="shrink-0 w-28 md:w-36 lg:w-40 h-16 md:h-20">
           <img 
