@@ -2,6 +2,7 @@
   <main>
     <LandingHeroSection id="hero" />
     <LandingWhyUsSection id="why-us" />
+    <LandingClientsSection id="clients" />
     <LandingEcosystemSection id="ecosystem" />
     <LandingClientBonusesSection id="bonuses" />
     <LandingPricingSection id="pricing" />

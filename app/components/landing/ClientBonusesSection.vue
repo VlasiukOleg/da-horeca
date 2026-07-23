@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 md:py-24 bg-brand-50 dark:bg-brand-950/20">
+  <section class="py-16 md:py-24 bg-white dark:bg-brand-950/20">
     <UContainer>
       <div class="flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2">

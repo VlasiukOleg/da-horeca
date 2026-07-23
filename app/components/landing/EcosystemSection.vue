@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 md:py-24 bg-beige dark:bg-gray-900/20">
+  <section class="py-16 md:py-24 bg-gray-100 dark:bg-gray-900/20">
     <UContainer>
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Наші партнери та екосистема</h2>
