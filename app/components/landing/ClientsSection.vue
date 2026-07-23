@@ -13,13 +13,16 @@ const clientLogos = [
 </script>
 
 <template>
-  <section class="py-8  bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
+  <section class="py-16 md:py-24  bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
     <UContainer>
       <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Наші клієнти</h2>
-        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Компанії, які вже довіряють нам свій бізнес.
-        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">З ким ми працюємо</h2>
+        <div class="flex flex-wrap justify-center gap-3 text-gray-700 dark:text-gray-300 max-w-4xl mx-auto font-medium text-sm md:text-base">
+          <span class="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 py-2 rounded-full shadow-sm"><UIcon name="i-heroicons-check-circle" class="w-5 h-5 text-brand-500" />Кав’ярні та кав’ярні-пекарні</span>
+          <span class="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 py-2 rounded-full shadow-sm"><UIcon name="i-heroicons-check-circle" class="w-5 h-5 text-brand-500" />Кафе та бари</span>
+          <span class="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 py-2 rounded-full shadow-sm"><UIcon name="i-heroicons-check-circle" class="w-5 h-5 text-brand-500" />Ресторани та мережеві проєкти</span>
+          <span class="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 py-2 rounded-full shadow-sm"><UIcon name="i-heroicons-check-circle" class="w-5 h-5 text-brand-500" />Мультиформатні заклади</span>
+        </div>
       </div>
 
       <UMarquee pause-on-hover class="py-4">
