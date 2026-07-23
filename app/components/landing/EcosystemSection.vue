@@ -6,21 +6,23 @@
         <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4">
           Ми інтегруємо найкращі IT-рішення для ресторанного бізнесу, щоб забезпечити безперебійний облік та контроль.
         </p>
-        <div class="inline-block bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 px-4 py-2 rounded-lg font-medium text-sm md:text-base">
-          Маємо прямий контакт із їхньою підтримкою та вміємо "подружити" їх між собою.
+        <div class="inline-flex items-center gap-3 bg-white dark:bg-gray-800 border border-brand-200 dark:border-brand-800 shadow-md shadow-brand-500/10 dark:shadow-brand-500/5 px-6 py-3 rounded-2xl font-medium text-sm md:text-base text-gray-800 dark:text-gray-200 transition-transform hover:scale-105 duration-300">
+          <div class="bg-brand-100 dark:bg-brand-900/50 p-2 rounded-full shrink-0 flex items-center justify-center">
+            <UIcon name="i-heroicons-sparkles-solid" class="w-5 h-5 text-brand-500" />
+          </div>
+          <span>Маємо прямий контакт із їхньою підтримкою та вміємо <span class="text-brand-600 dark:text-brand-400 font-bold">"подружити"</span> їх між собою.</span>
         </div>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-x-8 gap-y-10 max-w-5xl mx-auto pl-3 md:pl-0">
-        <div v-for="(partner, index) in partners" :key="index" class="w-full lg:w-[calc(50%-1rem)] relative pl-8 border-l-4 border-brand-200 dark:border-brand-800 hover:border-brand-500 transition-colors duration-300 group py-1">
-          <!-- Decorative dot on the line -->
-          <div class="absolute -left-[10px] top-1 w-4 h-4 bg-white dark:bg-gray-900 border-4 border-brand-300 dark:border-brand-700 rounded-full group-hover:border-brand-500 group-hover:bg-brand-500 transition-all duration-300"></div>
-          
-          <div class="flex items-center gap-3 mb-2">
-            <UIcon :name="partner.icon" class="w-7 h-7 text-gray-400 group-hover:text-brand-500 transition-colors duration-300" />
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">{{ partner.name }}</h3>
+      <div class="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+        <div v-for="(partner, index) in partners" :key="index" class="w-full lg:w-[calc(50%-0.75rem)] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-300 dark:hover:border-brand-700 transition-all duration-300 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-gray-50 dark:bg-gray-900 p-3 rounded-xl group-hover:bg-brand-50 dark:group-hover:bg-brand-900/30 transition-colors duration-300">
+              <UIcon :name="partner.icon" class="w-8 h-8 text-gray-500 dark:text-gray-400 group-hover:text-brand-500 transition-colors duration-300" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors duration-300">{{ partner.name }}</h3>
           </div>
-          <p class="text-gray-600 dark:text-gray-400">
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
             {{ partner.description }}
           </p>
         </div>

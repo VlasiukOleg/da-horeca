@@ -10,10 +10,8 @@
 <script setup>
 useSeoMeta({
   ogTitle: 'Horeca Da - сучасна ресторанна бухгалтерія',
-  ogDescription: 'Професійний фінансовий супровід, аудит та автоматизація для закладів Horeca.',
-  ogImage: 'https://da-horeca.vercel.app/og-image.png',
+  ogDescription: 'Забираємо рутину з накладними та інвентаризаціями. Допомагаємо бачити реальний чистий прибуток і контролювати фудкост.',
+  ogImage: 'https://www.horeca-da.com.ua/og-image.png',
   twitterCard: 'summary_large_image',
 })
 </script>
-
-
