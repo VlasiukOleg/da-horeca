@@ -31,6 +31,7 @@ const clientLogos = [
           <img 
             :src="logo" 
             :alt="`Клієнт ${index + 1}`" 
+            loading="lazy"
             class="w-full h-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
           />
         </div>

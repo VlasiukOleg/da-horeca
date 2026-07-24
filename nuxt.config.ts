@@ -22,5 +22,8 @@ export default defineNuxtConfig({
     },
     display: 'swap',
     download: true // Завантажує шрифт локально при збірці (краще для швидкості)
+  },
+  features: {
+    inlineStyles: true
   }
 });
