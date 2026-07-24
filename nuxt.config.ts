@@ -24,12 +24,19 @@ export default defineNuxtConfig({
       ]
     }
   },
-  studio: {
+studio: {
     repository: {
       provider: 'github',
       owner: 'VlasiukOleg',
       repo: 'da-horeca',
       branch: 'main'
+    },
+    // Додай цей блок автентифікації прямо у файл:
+    auth: {
+      github: {
+        clientId: process.env.NUXT_STUDIO_AUTH_GITHUB_CLIENT_ID,
+        clientSecret: process.env.NUXT_STUDIO_AUTH_GITHUB_CLIENT_SECRET
+      }
     }
   },
   nitro: {
