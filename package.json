@@ -10,10 +10,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/content": "^3.15.2",
     "@nuxt/ui": "^4.3.0",
     "@nuxtjs/google-fonts": "^3.2.0",
+    "baseline-browser-mapping": "^2.11.1",
+    "better-sqlite3": "^12.11.1",
+    "caniuse-lite": "^1.0.30001806",
     "maska": "^3.2.0",
     "nuxt": "^4.2.2",
+    "nuxt-studio": "^1.7.0",
     "vue": "^3.5.26",
     "vue-router": "^4.6.4",
     "yup": "^1.7.1"

@@ -9,19 +9,19 @@
         
         <!-- Варіант 1: Темна плашка (Badge) з нахилом -->
         <h1 class="text-4xl md:text-5xl lg:text-6xl text-gray-600 dark:text-gray-300 font-bold tracking-tight mb-16 leading-[1.1]">
-          це сучасна ресторанна бухгалтерія <br class="hidden md:block" /> 
-          <span class="inline-block bg-brand-800 text-white px-3 py-0.5 rounded-xl transform -rotate-2 mt-6 shadow-md font-bold text-3xl md:text-4xl lg:text-5xl">"без краваток"</span>
+          {{ page?.hero?.title }} <br class="hidden md:block" /> 
+          <span class="inline-block bg-brand-800 text-white px-3 py-0.5 rounded-xl transform -rotate-2 mt-6 shadow-md font-bold text-3xl md:text-4xl lg:text-5xl">{{ page?.hero?.badge }}</span>
         </h1>
 
         <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
-          Будуємо управлінський облік, який підлаштовується під ваш бізнес, щоб ви могли сфокусуватися на гостях, смаку та розвитку закладу.
+         {{ page?.hero?.description }}
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <UButton size="xl" color="primary" variant="solid">
-            Отримати консультацію
+            {{ page?.hero?.primaryButton }}
           </UButton>
           <UButton size="xl" color="gray" variant="ghost" to="#pricing">
-            Наші послуги
+            {{ page?.hero?.secondaryButton }}
           </UButton>
         </div>
       </div>
@@ -31,4 +31,5 @@
 
 <script setup>
 // Props/logic will go here if needed. Currently static content.
+const { data: page } = await useAsyncData(() => queryCollection('content').path('/').first())
 </script>
