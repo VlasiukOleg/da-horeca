@@ -16,6 +16,12 @@ export default defineNuxtConfig({
       ]
     }
   },
+  nitro: {
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
+    }
+  },
   googleFonts: {
     families: {
       Nunito: [400, 700, 900], // 900 — для тих самих жирних заголовків
