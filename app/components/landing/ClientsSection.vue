@@ -2,15 +2,15 @@
 // Масив з посиланнями на логотипи клієнтів (файли мають лежати в папці public)
 // Просто заміни ці назви на назви твоїх підготовлених файлів
 const clientLogos = [
-  '/sereda-logo.png',
-  '/avangarden-logo.png',
-  '/zironka-logo.png',
-  '/kicunya-logo.png',
-  '/boca-logo.png',
-  '/fsc-logo.png',
-  '/obiwan-logo.png',
-  '/fem-logo.png',
-  '/lafarine-logo.png',
+  '/sereda-logo.webp',
+  '/avangarden-logo.webp',
+  '/zironka-logo.webp',
+  '/kicunya-logo.webp',
+  '/boca-logo.webp',
+  '/fsc-logo.webp',
+  '/obiwan-logo.webp',
+  '/fem-logo.webp',
+  '/lafarine-logo.webp',
 ]
 </script>
 

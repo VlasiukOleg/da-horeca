@@ -43,7 +43,7 @@ const handleScrollToContact = () => {
   >
     <template #title>
       <div class="flex items-center gap-2">
-        <img src="/logo-white.png" alt="Horeca Da" class="h-8" />
+        <img src="/logo-white.webp" alt="Horeca Da" class="h-8" />
       </div>
     </template>
 

@@ -1,11 +1,5 @@
 <template>
   <section id="contact" class="py-16 md:py-24 relative overflow-hidden bg-gray-100 dark:bg-gray-950">
-    <!-- Decorative background elements -->
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-      <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-brand-50/50 dark:bg-brand-900/10 blur-3xl"></div>
-      <div class="absolute top-[40%] -right-[10%] w-[40%] h-[60%] rounded-full bg-brand-100/30 dark:bg-brand-800/10 blur-3xl"></div>
-    </div>
-
     <UContainer class="relative z-10">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 md:mb-16">

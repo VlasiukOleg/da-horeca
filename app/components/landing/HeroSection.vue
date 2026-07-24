@@ -4,7 +4,7 @@
       <div class="max-w-3xl mx-auto text-center">
         <!-- Logo Image container -->
         <div class="flex justify-center mb-2">
-          <img src="/logo.png" alt="Horeca Da" class="h-20 md:h-28 lg:h-32 object-contain" />
+          <img src="/logo.webp" alt="Horeca Da" class="h-20 md:h-28 lg:h-32 object-contain" />
         </div>
         
         <!-- Варіант 1: Темна плашка (Badge) з нахилом -->
