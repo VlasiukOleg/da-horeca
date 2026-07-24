@@ -16,6 +16,14 @@ export default defineNuxtConfig({
       ]
     }
   },
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'VlasiukOleg',
+      repo: 'da-horeca',
+      branch: 'main'
+    }
+  },
   nitro: {
     prerender: {
       routes: ['/'],
