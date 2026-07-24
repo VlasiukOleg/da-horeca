@@ -7,6 +7,14 @@ export default defineNuxtConfig({
   runtimeConfig: {
     telegramBotToken: "",
     telegramChatId: "",
+    studio: {
+      auth: {
+        github: {
+          clientId: "",
+          clientSecret: ""
+        }
+      }
+    }
   },
   app: {
     head: {
