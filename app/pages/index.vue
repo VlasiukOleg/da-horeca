@@ -7,7 +7,7 @@ const { data: page } = await useAsyncData('home-page', () => {
 <template>
   <main>
     <LandingHeroSection id="hero" :hero="page?.hero" />
-    <LandingWhyUsSection id="why-us" />
+    <LandingWhyUsSection id="why-us" :data="page?.whyUs" />
     <LandingClientsSection id="clients" />
     <LandingEcosystemSection id="ecosystem" />
     <LandingClientBonusesSection id="bonuses" />

@@ -12,6 +12,15 @@ export default defineContentConfig({
           description: z.string(),
           primaryButton: z.string(),
           secondaryButton: z.string()
+        }),
+        whyUs: z.object({
+          title: z.string(),
+          description: z.string(),
+          features: z.array(z.object({
+            icon: z.string(),
+            title: z.string(),
+            description: z.string()
+          }))
         })
       })
     })
