@@ -21,6 +21,11 @@ export default defineContentConfig({
             title: z.string().optional(),
             description: z.string().optional()
           })).optional()
+        }).optional(),
+        clients: z.object({
+          title: z.string().optional(),
+          categories: z.array(z.string()).optional(),
+          logos: z.array(z.string()).optional()
         }).optional()
       })
     })

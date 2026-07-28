@@ -18,5 +18,21 @@ whyUs:
     - icon: i-heroicons-hand-raised
       title: Гнучкість та партнерство
       description: Пропонуємо готові рішення оптимізації та завжди розмовляємо з вами однією мовою, без складної термінології.
-    - title: Нова карто
+clients:
+  title: З ким ми працюємо
+  categories:
+    - Кав’ярні та кав’ярні-пекарні
+    - Кафе та бари
+    - Ресторани та мережеві проєкти
+    - Мультиформатні заклади
+  logos:
+    - /sereda-logo.webp
+    - /avangarden-logo.webp
+    - /zironka-logo.webp
+    - /kicunya-logo.webp
+    - /boca-logo.webp
+    - /fsc-logo.webp
+    - /obiwan-logo.webp
+    - /fem-logo.webp
+    - /lafarine-logo.webp
 ---
