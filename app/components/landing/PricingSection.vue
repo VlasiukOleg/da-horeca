@@ -2,9 +2,9 @@
   <section class="py-16 md:py-24 bg-gray-100 dark:bg-gray-900/10" id="pricing">
     <UContainer>
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Послуги та вартість</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{{ data?.title || 'Послуги та вартість' }}</h2>
         <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Прозоре ціноутворення без прихованих платежів. Обирайте формат співпраці, який підходить саме вашому закладу.
+          {{ data?.description }}
         </p>
       </div>
 
@@ -76,20 +76,41 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
-import { categories } from '~/utils/services'
+
+interface ServiceItem {
+  name?: string;
+  price?: string;
+  description?: string;
+}
+
+interface Category {
+  id?: string;
+  title?: string;
+  icon?: string;
+  items?: ServiceItem[];
+}
+
+const props = defineProps<{
+  data?: {
+    title?: string;
+    description?: string;
+    categories?: Category[];
+  }
+}>()
 
 const selectedService = useSelectedService()
 
-const handleOrder = (serviceName) => {
-  selectedService.value = serviceName
+const handleOrder = (serviceName?: string) => {
+  if (serviceName) selectedService.value = serviceName
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
 }
 
 // For UAccordion
 const accordionItems = computed(() => {
-  return categories.map(cat => ({
+  if (!props.data?.categories) return []
+  return props.data.categories.map(cat => ({
     label: cat.title,
     icon: cat.icon,
     value: cat.id,

@@ -5,17 +5,17 @@
         <div class="md:w-1/2">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/50 text-brand-700 dark:text-brand-300 text-sm font-medium mb-6">
             <UIcon name="i-heroicons-sparkles" class="w-4 h-4" />
-            <span>Бонуси для наших клієнтів</span>
+            <span>{{ data?.badge }}</span>
           </div>
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            Доступ до закритого ком'юніті перевірених постачальників
+            {{ data?.title }}
           </h2>
           <p class="text-gray-600 dark:text-gray-300 mb-8 text-lg">
-            Працюючи з нами, ви отримуєте не лише бухгалтерію, а й доступ до нашої партнерської мережі. Ми зібрали базу надійних постачальників, які пропонують найкращі умови для наших клієнтів.
+            {{ data?.description }}
           </p>
 
           <ul class="space-y-4">
-            <li v-for="(bonus, index) in bonuses" :key="index" class="flex items-start gap-3">
+            <li v-for="(bonus, index) in data?.bonuses" :key="index" class="flex items-start gap-3">
               <div class="mt-1 bg-white dark:bg-gray-800 rounded-full p-1 shadow-sm text-brand-500">
                 <UIcon :name="bonus.icon" class="w-5 h-5" />
               </div>
@@ -46,7 +46,7 @@
                 <div class="h-2 bg-gray-100 dark:bg-gray-800 rounded w-5/6"></div>
                 <div class="h-2 bg-gray-100 dark:bg-gray-800 rounded w-4/6"></div>
               </div>
-              <UButton class="w-full mt-6" color="gray" variant="soft">
+              <UButton class="w-full mt-6" variant="soft">
                 Дізнатись деталі
               </UButton>
             </UCard>
@@ -57,22 +57,19 @@
   </section>
 </template>
 
-<script setup>
-const bonuses = [
-  {
-    icon: 'i-heroicons-user-group',
-    title: 'Доступ до бази «своїх»',
-    description: 'Перевірені підрядники та постачальники, з якими ми працюємо роками.'
-  },
-  {
-    icon: 'i-heroicons-receipt-percent',
-    title: 'Ексклюзивні знижки',
-    description: 'Спеціальні ціни на обладнання, продукти та послуги інтеграції.'
-  },
-  {
-    icon: 'i-heroicons-rocket-launch',
-    title: 'Швидкий старт для нових закладів',
-    description: 'Допомагаємо запуститися без зайвих витрат та типових помилок.'
+<script setup lang="ts">
+interface Bonus {
+  icon?: string;
+  title?: string;
+  description?: string;
+}
+
+defineProps<{
+  data?: {
+    badge?: string;
+    title?: string;
+    description?: string;
+    bonuses?: Bonus[];
   }
-]
+}>()
 </script>

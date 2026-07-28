@@ -36,6 +36,30 @@ export default defineContentConfig({
             icon: z.string().optional(),
             description: z.string().optional()
           })).optional()
+        }).optional(),
+        clientBonuses: z.object({
+          badge: z.string().optional(),
+          title: z.string().optional(),
+          description: z.string().optional(),
+          bonuses: z.array(z.object({
+            icon: z.string().optional(),
+            title: z.string().optional(),
+            description: z.string().optional()
+          })).optional()
+        }).optional(),
+        pricing: z.object({
+          title: z.string().optional(),
+          description: z.string().optional(),
+          categories: z.array(z.object({
+            id: z.string().optional(),
+            title: z.string().optional(),
+            icon: z.string().optional(),
+            items: z.array(z.object({
+              name: z.string().optional(),
+              price: z.string().optional(),
+              description: z.string().optional()
+            })).optional()
+          })).optional()
         }).optional()
       })
     })
