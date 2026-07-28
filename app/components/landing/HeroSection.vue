@@ -32,11 +32,11 @@
 <script setup lang="ts">
 defineProps<{
   hero?: {
-    title: string;
-    badge: string;
-    description: string;
-    primaryButton: string;
-    secondaryButton: string;
+    title?: string;
+    badge?: string;
+    description?: string;
+    primaryButton?: string;
+    secondaryButton?: string;
   }
 }>()
 </script>

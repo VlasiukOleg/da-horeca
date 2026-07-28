@@ -1,9 +1,9 @@
 <script setup lang="ts">
 defineProps<{
   data?: {
-    title: string;
-    categories: string[];
-    logos: string[];
+    title?: string;
+    categories?: string[];
+    logos?: string[];
   }
 }>()
 </script>

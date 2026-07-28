@@ -23,16 +23,16 @@
 
 <script setup lang="ts">
 interface Feature {
-  icon: string;
-  title: string;
-  description: string;
+  icon?: string;
+  title?: string;
+  description?: string;
 }
 
 defineProps<{
   data?: {
-    title: string;
-    description: string;
-    features: Feature[];
+    title?: string;
+    description?: string;
+    features?: Feature[];
   }
 }>()
 </script>
