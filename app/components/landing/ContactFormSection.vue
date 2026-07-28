@@ -4,10 +4,10 @@
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 md:mb-16">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Готові навести лад у фінансах?
+            {{ data?.title || 'Готові навести лад у фінансах?' }}
           </h2>
           <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Залиште заявку, і ми зв'яжемося з вами для обговорення деталей вашого проєкту та підбору оптимального формату співпраці.
+            {{ data?.description || 'Залиште заявку, і ми зв\'яжемося з вами для обговорення деталей вашого проєкту та підбору оптимального формату співпраці.' }}
           </p>
         </div>
 
@@ -109,10 +109,16 @@ import { object, string } from 'yup'
 import type { InferType } from 'yup'
 import type { FormSubmitEvent } from '@nuxt/ui'
 
-import { categories } from '~/utils/services'
+const props = defineProps<{
+  data?: {
+    title?: string;
+    description?: string;
+  };
+  services?: (string | undefined)[];
+}>()
 
 const servicesOptions = computed(() => {
-  return categories.flatMap(cat => cat.items.map(item => item.name))
+  return (props.services || []).filter(Boolean) as string[]
 })
 
 const schema = object({

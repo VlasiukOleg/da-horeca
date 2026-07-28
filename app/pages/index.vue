@@ -13,6 +13,10 @@ const { data: page } = await useAsyncData('home-page', () => {
     <LandingClientBonusesSection id="bonuses" :data="page?.clientBonuses" />
     <LandingPricingSection id="pricing" :data="page?.pricing" />
     <LandingReviewsSection id="reviews" :data="page?.reviews" />
-    <LandingContactFormSection id="contact" />
+    <LandingContactFormSection 
+      id="contact" 
+      :data="page?.contact" 
+      :services="page?.pricing?.categories?.flatMap(c => c.items?.map(i => i.name) || []) || []" 
+    />
   </main>
 </template>

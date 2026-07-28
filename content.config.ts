@@ -73,6 +73,10 @@ export default defineContentConfig({
             description: z.string().optional(),
             text: z.string().optional()
           })).optional()
+        }).optional(),
+        contact: z.object({
+          title: z.string().optional(),
+          description: z.string().optional()
         }).optional()
       })
     })
