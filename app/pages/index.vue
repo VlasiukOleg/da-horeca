@@ -12,7 +12,7 @@ const { data: page } = await useAsyncData('home-page', () => {
     <LandingEcosystemSection id="ecosystem" :data="page?.ecosystem" />
     <LandingClientBonusesSection id="bonuses" :data="page?.clientBonuses" />
     <LandingPricingSection id="pricing" :data="page?.pricing" />
-    <LandingReviewsSection id="reviews" />
+    <LandingReviewsSection id="reviews" :data="page?.reviews" />
     <LandingContactFormSection id="contact" />
   </main>
 </template>

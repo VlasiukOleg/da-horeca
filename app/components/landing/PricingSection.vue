@@ -13,15 +13,6 @@
           :items="accordionItems" 
           default-value="complex"
           class="space-y-4"
-          :ui="{
-            wrapper: 'w-full flex flex-col',
-            default: {
-              class: 'px-6 py-6 rounded-2xl border border-gray-200/60 dark:border-gray-800/60 shadow-sm bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/80 transition-all w-full text-left flex items-center gap-4'
-            },
-            item: {
-              padding: 'px-2 pt-2 pb-6'
-            }
-          }"
         >
           <!-- Custom Icon (Leading) -->
           <template #leading="{ item, open }">

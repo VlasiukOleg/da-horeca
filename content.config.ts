@@ -60,6 +60,19 @@ export default defineContentConfig({
               description: z.string().optional()
             })).optional()
           })).optional()
+        }).optional(),
+        reviews: z.object({
+          title: z.string().optional(),
+          description: z.string().optional(),
+          items: z.array(z.object({
+            name: z.string().optional(),
+            role: z.string().optional(),
+            company: z.string().optional(),
+            avatar: z.string().optional(),
+            instagram: z.string().optional(),
+            description: z.string().optional(),
+            text: z.string().optional()
+          })).optional()
         }).optional()
       })
     })
