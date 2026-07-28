@@ -7,21 +7,21 @@ export default defineContentConfig({
       source: '**/*.md',
       schema: z.object({
         hero: z.object({
-          title: z.string(),
-          badge: z.string(),
-          description: z.string(),
-          primaryButton: z.string(),
-          secondaryButton: z.string()
-        }),
+          title: z.string().optional(),
+          badge: z.string().optional(),
+          description: z.string().optional(),
+          primaryButton: z.string().optional(),
+          secondaryButton: z.string().optional()
+        }).optional(),
         whyUs: z.object({
-          title: z.string(),
-          description: z.string(),
+          title: z.string().optional(),
+          description: z.string().optional(),
           features: z.array(z.object({
-            icon: z.string(),
-            title: z.string(),
-            description: z.string()
-          }))
-        })
+            icon: z.string().optional(),
+            title: z.string().optional(),
+            description: z.string().optional()
+          })).optional()
+        }).optional()
       })
     })
   }
