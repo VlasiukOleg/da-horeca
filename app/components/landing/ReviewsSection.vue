@@ -26,6 +26,8 @@ function openReview(review: Review) {
   selectedReview.value = review
   isOpen.value = true
 }
+
+
 </script>
 
 <template>
@@ -38,8 +40,25 @@ function openReview(review: Review) {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <UCard v-for="(review, index) in data?.items" :key="index" class="h-full flex flex-col">
+      <UCarousel 
+        v-if="data?.items?.length"
+        v-slot="{ item: review }" 
+        arrows
+        dots
+        :prev="{ variant: 'solid', color: 'primary' }"
+        :next="{ variant: 'solid', color: 'primary' }"
+        indicators
+        :items="data.items" 
+        :ui="{
+          prev: '-start-2',
+          next: '-end-2',
+          dot: 'data-[state=active]:bg-brand-500 dark:data-[state=active]:bg-brand-400'
+        }"
+        class="w-full max-w-lg mx-auto"
+      >
+        <UCard 
+          class="border border-gray-200 dark:border-gray-800"
+        >
           <div class="flex items-start gap-4 mb-4">
             <UAvatar :src="review.avatar" :alt="review.name" size="lg" />
             <div class="flex-1 min-w-0">
@@ -85,7 +104,7 @@ function openReview(review: Review) {
             </UButton>
           </div>
         </UCard>
-      </div>
+      </UCarousel>
     </UContainer>
 
     <!-- Modal for full review -->

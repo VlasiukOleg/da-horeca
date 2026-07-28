@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     telegramChatId: "",
   },
   studio: {
+    route: '/admin',
     repository: {
       provider: "github",
       owner: "VlasiukOleg",
