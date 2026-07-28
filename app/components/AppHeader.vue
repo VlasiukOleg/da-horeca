@@ -1,32 +1,16 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
 
-const items = computed<NavigationMenuItem[]>(() => [
-  {
-    label: "Чому саме ми?",
-    to: "#why-us",
-  },
-  {
-    label: "Партнери",
-    to: "#ecosystem",
-  },
-  {
-    label: "Бонуси",
-    to: "#bonuses",
-  },
-  {
-    label: "Послуги",
-    to: "#pricing",
-  },
-  {
-    label: "Відгуки",
-    to: "#reviews",
-  },
-  {
-    label: "Контакти",
-    to: "#contact",
-  },
-]);
+const { data: page } = await useAsyncData('home-page-header', () => {
+  return queryCollection('content').path('/').first()
+})
+
+const items = computed<NavigationMenuItem[]>(() => {
+  return (page.value?.header?.nav || []).map(item => ({
+    label: item.label || '',
+    to: item.to || ''
+  }))
+});
 
 const handleScrollToContact = () => {
   const element = document.getElementById("contact");
@@ -54,7 +38,8 @@ const handleScrollToContact = () => {
 
     <template #right>
       <UButton
-        to="tel:+380997120883"
+        v-if="page?.header?.phone"
+        :to="'tel:' + page.header.phone"
         icon="i-heroicons-phone"
         variant="solid"
         class="bg-white text-brand-700 hover:bg-gray-100 shadow-sm"
@@ -62,7 +47,7 @@ const handleScrollToContact = () => {
       />
       <UColorModeButton />
       <UButton
-        label="Записатись на консультацію"
+        :label="page?.header?.button || 'Записатись на консультацію'"
         variant="solid"
         class="ml-2 hidden bg-white lg:flex  text-brand-700 hover:bg-gray-100 font-semibold"
         @click="handleScrollToContact"

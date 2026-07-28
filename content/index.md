@@ -53,6 +53,27 @@ ecosystem:
     - name: Expirenza (by mono)
       icon: i-heroicons-star
       description: Оплата рахунків за QR-кодом та безготівкові чайові. Еквайринг, чайові вашої команди та комісії сервісу будуть прозоро відображені в управлінському обліку, а також все буде надійно інтегровано з вашою POS-системою.
+footer:
+  phone: "+380997120883"
+  copyright: Horeca Da. Всі права захищені.
+  policyText: Політика конфіденційності
+  homeText: Головна
+header:
+  phone: "+380997120883"
+  button: Записатись на консультацію
+  nav:
+    - label: Чому саме ми?
+      to: "#why-us"
+    - label: Партнери
+      to: "#ecosystem"
+    - label: Бонуси
+      to: "#bonuses"
+    - label: Послуги
+      to: "#pricing"
+    - label: Відгуки
+      to: "#reviews"
+    - label: Контакти
+      to: "#contact"
 hero:
   title: "це сучасна ресторанна бухгалтерія. "
   badge: '"без краваток"'

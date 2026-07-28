@@ -77,6 +77,20 @@ export default defineContentConfig({
         contact: z.object({
           title: z.string().optional(),
           description: z.string().optional()
+        }).optional(),
+        header: z.object({
+          nav: z.array(z.object({
+            label: z.string().optional(),
+            to: z.string().optional()
+          })).optional(),
+          phone: z.string().optional(),
+          button: z.string().optional()
+        }).optional(),
+        footer: z.object({
+          phone: z.string().optional(),
+          copyright: z.string().optional(),
+          policyText: z.string().optional(),
+          homeText: z.string().optional()
         }).optional()
       })
     })

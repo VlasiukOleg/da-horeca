@@ -4,11 +4,15 @@ import type { NavigationMenuItem } from "@nuxt/ui";
 
 const route = useRoute();
 
+const { data: page } = await useAsyncData('home-page-footer', () => {
+  return queryCollection('content').path('/').first()
+})
+
 const items = computed<NavigationMenuItem[]>(() => {
   if (route.path === '/policy') {
     return [
       {
-        label: "Головна",
+        label: page.value?.footer?.homeText || "Головна",
         to: "/",
       },
     ];
@@ -16,7 +20,7 @@ const items = computed<NavigationMenuItem[]>(() => {
   
   return [
     {
-      label: "Політика конфіденційності",
+      label: page.value?.footer?.policyText || "Політика конфіденційності",
       to: "/policy",
     },
   ];
@@ -30,7 +34,7 @@ const items = computed<NavigationMenuItem[]>(() => {
   }">
     <template #left>
       <p class="text-white/80 text-sm">
-        Copyright © {{ new Date().getFullYear() }} Horeca Da. Всі права захищені.
+        Copyright © {{ new Date().getFullYear() }} {{ page?.footer?.copyright || 'Horeca Da. Всі права захищені.' }}
       </p>
     </template>
 
@@ -39,8 +43,8 @@ const items = computed<NavigationMenuItem[]>(() => {
     </div>
 
     <template #right>
-      <a href="tel:+380997120883" class="text-white hover:opacity-80 transition-opacity text-sm font-medium">
-        +380 99 712 08 83
+      <a v-if="page?.footer?.phone" :href="'tel:' + String(page.footer.phone)" class="text-white hover:opacity-80 transition-opacity text-sm font-medium">
+        {{ String(page.footer.phone).replace(/(\+?380)(\d{2})(\d{3})(\d{2})(\d{2})/, '+$1 $2 $3 $4 $5').replace('++', '+') }}
       </a>
     </template>
   </UFooter>

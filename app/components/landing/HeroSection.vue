@@ -17,7 +17,7 @@
          {{ hero?.description }}
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <UButton size="xl" color="primary" variant="solid">
+          <UButton size="xl" color="primary" variant="solid" to="#contact">
             {{ hero?.primaryButton }}
           </UButton>
           <UButton size="xl" variant="ghost" to="#pricing">
