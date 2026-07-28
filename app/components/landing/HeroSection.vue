@@ -20,7 +20,7 @@
           <UButton size="xl" color="primary" variant="solid">
             {{ hero?.primaryButton }}
           </UButton>
-          <UButton size="xl" color="gray" variant="ghost" to="#pricing">
+          <UButton size="xl" variant="ghost" to="#pricing">
             {{ hero?.secondaryButton }}
           </UButton>
         </div>
