@@ -26,6 +26,16 @@ export default defineContentConfig({
           title: z.string().optional(),
           categories: z.array(z.string()).optional(),
           logos: z.array(z.string()).optional()
+        }).optional(),
+        ecosystem: z.object({
+          title: z.string().optional(),
+          description: z.string().optional(),
+          highlight: z.string().optional(),
+          partners: z.array(z.object({
+            name: z.string().optional(),
+            icon: z.string().optional(),
+            description: z.string().optional()
+          })).optional()
         }).optional()
       })
     })
